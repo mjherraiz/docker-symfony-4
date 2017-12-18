@@ -132,17 +132,11 @@ $ docker rm $(docker ps -aq)
 $ docker rmi $(docker images -q)
 ```
 
-## FAQ
-
-* Got this error: `ERROR: Couldn't connect to Docker daemon at http+docker://localunixsocket - is it running?
-If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.` ?  
-Run `docker-compose up -d` instead.
-
-* Permission problem? See [this doc (Setting up Permission)](http://symfony.com/doc/current/book/installation.html#checking-symfony-application-configuration-and-setup)
+## Debug your app
 
 * How to config Xdebug?
 Xdebug is configured out of the box!
 Just config your IDE to connect port  `9001` and id key `PHPSTORM`
 
 ## Credits
-This project was forked [from Maxence Poutord work](https://github.com/maxpou/docker-symfony)
+This project at init was forked [from Maxence Poutord work](https://github.com/maxpou/docker-symfony)

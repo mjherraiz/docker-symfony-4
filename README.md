@@ -57,9 +57,9 @@ Remember that server name is define in .env file in this demo I use symfony.loca
 Just run `docker-compose up -d`, then:
 
 * Symfony app: visit [symfony.localhost](http://symfony.localhost)  
-* Symfony dev mode: set APP_ENV=dev
-* Symfony test mode: set APP_ENV=test
-* Symfony prod mode: set APP_ENV=prod
+* Symfony dev mode: set APP_ENV=dev and rebuild
+* Symfony test mode: set APP_ENV=test and rebuild
+* Symfony prod mode: set APP_ENV=prod and rebuild
 * Logs (Kibana): [symfony.localhost:81](http://symfony.localhost:81)
 * Logs (files location): logs/nginx and logs/symfony
 * Mailcatcher: visit [symfony.localhost:1080](http://symfony.localhost:1080)  

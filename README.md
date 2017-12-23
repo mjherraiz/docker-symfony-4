@@ -21,6 +21,7 @@ Docker-symfony gives you everything you need for developing Symfony 4 applicatio
     ```
 
 3. Update your system host file (add symfony.localhost)
+Remember that server name is define in .env file in this demo I use symfony.localhost please replace with your custom server name if you decide to use another one
 
     ```bash
     # UNIX only: get containers IP address and update host (replace IP according to your configuration) (on Windows, edit C:\Windows\System32\drivers\etc\hosts)

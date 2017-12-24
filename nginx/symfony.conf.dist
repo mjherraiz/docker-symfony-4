@@ -1,6 +1,6 @@
 server {
     server_name $VIRTUAL_HOST;
-    root /var/www/demo/public;
+    root /var/www/symfony/public;
 
     location / {
         try_files $uri /index.php$is_args$args;
@@ -28,6 +28,6 @@ server {
         return 404;
     }
 
-    error_log /var/log/nginx/demo_error.log;
-    access_log /var/log/nginx/demo_access.log;
+    error_log /var/log/nginx/symfony_error.log;
+    access_log /var/log/nginx/symfony_access.log;
 }

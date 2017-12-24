@@ -1,7 +1,7 @@
 # See https://github.com/docker-library/php/blob/master/7.1/fpm/Dockerfile
 FROM php:7.1-fpm
 ARG TIMEZONE
-
+ARG SYMFONY_APP_PATH
 MAINTAINER Maria Jose Herraiz <mjherraizgarcia@gmail.com>
 
 RUN apt-get update && apt-get install -y \
@@ -45,11 +45,11 @@ RUN echo "xdebug.remote_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-x
 
 RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 
-RUN mkdir -p /var/www/symfony/var/cache
-RUN mkdir -p /var/www/symfony/var/log
+RUN mkdir -p /var/www/${SYMFONY_APP_PATH}/var/cache
+RUN mkdir -p /var/www/${SYMFONY_APP_PATH}/var/log
 
-WORKDIR /var/www/symfony
+WORKDIR /var/www/${SYMFONY_APP_PATH}
 
 RUN usermod -u 1000 www-data
-RUN chown -R www-data:www-data /var/www/symfony/var/cache
-RUN chown -R www-data:www-data /var/www/symfony/var/log
+RUN chown -R www-data:www-data /var/www/${SYMFONY_APP_PATH}/var/cache
+RUN chown -R www-data:www-data /var/www/${SYMFONY_APP_PATH}/var/log

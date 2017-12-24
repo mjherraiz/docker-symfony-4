@@ -15,9 +15,10 @@ services:
             context: php7-fpm
             args:
                 TIMEZONE: ${TIMEZONE}
+                SYMFONY_APP_PATH: ${SYMFONY_APP_PATH}
         volumes:
-            - ${SYMFONY_APP_PATH}:/var/www/symfony
-            - ./logs/symfony:/var/www/symfony/var/log
+            - ./projects/${SYMFONY_APP_PATH}:/var/www/${SYMFONY_APP_PATH}
+            - ./logs/${SYMFONY_APP_PATH}:/var/www/${SYMFONY_APP_PATH}/var/log
         environment:
             APP_ENV: ${APP_ENV}
             APP_DEBUG: ${APP_DEBUG}

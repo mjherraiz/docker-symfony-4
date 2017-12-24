@@ -1,17 +1,17 @@
 input {
   file {
     type => "nginx_access"
-    path => "/var/log/nginx/demo_access.log"
+    path => "/var/log/nginx/symfony_access.log"
     start_position => beginning
   }
   file {
-    type => "demo_dev"
-    path => "/var/www/demo/var/log/dev.log"
+    type => "symfony_dev"
+    path => "/var/www/symfony/var/log/dev.log"
     start_position => beginning
   }
   file {
-    type => "demo_prod"
-    path => "/var/www/demo/var/log/prod.log"
+    type => "symfony_prod"
+    path => "/var/www/symfony/var/log/prod.log"
     start_position => beginning
   }
 }
@@ -23,7 +23,7 @@ filter {
       match => { "message" => "%{NGINXACCESS}"}
     }
   }
-  else if [type] in ["demo_dev", "demo_prod"] {
+  else if [type] in ["symfony_dev", "symfony_prod"] {
     grok {
       patterns_dir => "./patterns"
       match => { "message" => "%{SYMFONY}"}
